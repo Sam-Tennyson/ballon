@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-2vo_$rhbs61jl@k*25a@6x6g24!hdceq1x%da02uqsnxn4w6!$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".vercel.app", ".now.sh"]
 
 
 # Application definition
@@ -129,5 +129,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Manual addd
-import django_heroku
-django_heroku.settings(locals())
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
